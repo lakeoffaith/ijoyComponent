@@ -1,4 +1,5 @@
 ```
+
 /*
     ijoy react-native Component_Login
     name,  规则 ijoy name rule   5-11为以字母开头，字母和数字的规则
@@ -6,7 +7,7 @@
     forgetPassword
     Login
     LogUp
-    show error
+    show error   用toast 显示
 
 
 
@@ -27,19 +28,12 @@ export default class Login extends React.Component{
   render(){
     return(
        <View style={styles.container}>
-          <Image style={styles.bg} source={{uri:'http://pic.4j4j.cn/upload/pic/20130815/31e652fe2d.jpg'}}/>
-          <View style={styles.header}>
-              <Text style={styles.mark}>IJOY</Text>
-          </View>
-          <View style={styles.error}>
-              <Text>5-7位英文字母，数字。以字母开头</Text>
-          </View>
           <View style={styles.inputs}>
              <View style={styles.inputContainer}>
                 <Icon style={styles.inputIcon} name="person"/>
                 <TextInput
                 style={styles.input}
-                placeholder="用户名"
+                placeholder="账号"
                 placeholderTextColor="#FFF"
                  />
              </View>
@@ -52,49 +46,31 @@ export default class Login extends React.Component{
                  />
 
              </View>
-             <View style={styles.forgotContainer}>
-                <Text style={styles.greyFont}>忘记密码</Text>
-             </View>
+
           </View>
 
           <View style={styles.signin}>
               <Text style={{fontSize:20}}>登录</Text>
           </View>
-          <View style={styles.signup}>
-              <Text>没有账号请注册</Text>
+          <View style={styles.urls}>
+            <View style={styles.forgotPassword}>
+               <Text style={styles.greyFont}>忘记密码</Text>
+            </View>
+            <View style={styles.signup}>
+                <Text>注册</Text>
+            </View>
           </View>
-
-       </View>
+        </View>
     );
   }
 }
 
 const styles=StyleSheet.create({
   container:{
+    marginTop:59,
     flex:1,
     flexDirection:'column',
     backgroundColor:'transparent'
-  },
-  bg:{
-    position:'absolute',
-    left:0,
-    top:0,
-    width:window.width,
-    height:window.height
-  },
-  header:{
-      flex:0.4,
-      justifyContent:'center',
-      alignItems:'center'
-  },
-  error:{
-    marginLeft:15,
-    marginRight:15,
-    height:50,
-    borderRadius:2,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:'red'
   },
   mark:{
       fontSize:26
@@ -110,6 +86,9 @@ const styles=StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     flex:0.15
+  },
+  urls:{
+    flexDirection:'row',
   },
   signup:{
     justifyContent:'center',
@@ -140,4 +119,5 @@ const styles=StyleSheet.create({
       padding:15
   }
 })
+
 ```
